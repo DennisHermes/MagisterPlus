@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:myapp/UI/cijfers.dart';
 
 class agenda extends StatefulWidget {
@@ -9,6 +12,13 @@ class agenda extends StatefulWidget {
 }
 
 class _agendaState extends State<agenda> {
+  BannerAd banner;
+  @override
+  Void didChangeDependencies() {
+    super.didChangeDependencies();
+    final adState = Provider
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,6 +94,7 @@ class _agendaState extends State<agenda> {
               ),
             ),
           ),
+          SizedBox(height: 50),
         ],
       ),
     );
@@ -101,7 +112,7 @@ List<Widget> getMagisterAgenda() {
 Widget agendaCard() {
   return Container(
     padding: EdgeInsets.all(12),
-    margin: EdgeInsets.only(right: 20, top: 20),
+    margin: EdgeInsets.only(right: 20, top: 10, bottom: 10),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.all(Radius.circular(20)),
       color: Colors.white,

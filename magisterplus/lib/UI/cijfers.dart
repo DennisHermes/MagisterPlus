@@ -100,7 +100,7 @@ List<Widget> getMagisterAgenda() {
 Widget agendaCard() {
   return Container(
     padding: EdgeInsets.all(12),
-    margin: EdgeInsets.only(right: 20, top: 20),
+    margin: EdgeInsets.only(right: 20, top: 10, bottom: 10),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.all(Radius.circular(20)),
       color: Colors.white,
