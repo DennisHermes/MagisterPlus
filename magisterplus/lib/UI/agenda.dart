@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/UI/cijfers.dart';
 
 class agenda extends StatefulWidget {
   const agenda({Key? key}) : super(key: key);
@@ -16,7 +17,12 @@ class _agendaState extends State<agenda> {
         child: Row(
           children: [
             IconButton(icon: Icon(Icons.check_box_outlined), onPressed: () {}),
-            IconButton(icon: Icon(Icons.grade_outlined), onPressed: () {}),
+            IconButton(
+                icon: Icon(Icons.grade_outlined),
+                onPressed: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => cijfers()));
+                }),
             IconButton(icon: Icon(Icons.mail_outline), onPressed: () {}),
             Spacer(),
             IconButton(
@@ -54,13 +60,13 @@ class _agendaState extends State<agenda> {
                           style: TextStyle(
                             fontFamily: "Helvetica",
                             fontWeight: FontWeight.bold,
-                            fontSize: 34,
+                            fontSize: 38,
                           )),
                       IconButton(
                           onPressed: () {},
                           icon: Icon(
                             Icons.settings,
-                            size: 34,
+                            size: 38,
                           ))
                     ],
                   ),
@@ -101,7 +107,7 @@ Widget agendaCard() {
       color: Colors.white,
       boxShadow: [
         new BoxShadow(
-          color: Colors.black.withOpacity(0.25),
+          color: Colors.black.withOpacity(0.50),
           blurRadius: 5.0,
         ),
       ],
@@ -135,7 +141,7 @@ Widget agendaCard() {
               color: Colors.white,
               boxShadow: [
                 new BoxShadow(
-                  color: Colors.black.withOpacity(0.25),
+                  color: Colors.black.withOpacity(0.50),
                   blurRadius: 5.0,
                 ),
               ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Agenda.dart';
+
 class cijfers extends StatefulWidget {
   const cijfers({Key? key}) : super(key: key);
 
@@ -34,7 +36,10 @@ class _cijfersState extends State<cijfers> {
             size: 30,
           ),
           backgroundColor: Colors.white,
-          onPressed: () {}),
+          onPressed: () {
+            Navigator.pushReplacement(
+                context, MaterialPageRoute(builder: (context) => agenda()));
+          }),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: Stack(
         children: <Widget>[
@@ -54,13 +59,13 @@ class _cijfersState extends State<cijfers> {
                           style: TextStyle(
                             fontFamily: "Helvetica",
                             fontWeight: FontWeight.bold,
-                            fontSize: 34,
+                            fontSize: 38,
                           )),
                       IconButton(
                           onPressed: () {},
                           icon: Icon(
                             Icons.settings,
-                            size: 34,
+                            size: 38,
                           ))
                     ],
                   ),
@@ -101,7 +106,7 @@ Widget agendaCard() {
       color: Colors.white,
       boxShadow: [
         new BoxShadow(
-          color: Colors.black.withOpacity(0.25),
+          color: Colors.black.withOpacity(0.50),
           blurRadius: 5.0,
         ),
       ],
@@ -109,60 +114,44 @@ Widget agendaCard() {
     child: Column(
       children: <Widget>[
         Row(
-          children: <Widget>[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  '10:30 - 10:15',
-                  style: TextStyle(
-                    fontFamily: "Helvetica",
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                "Economie",
+                style: TextStyle(
+                  fontFamily: "Helvetica",
+                  fontWeight: FontWeight.bold,
+                  fontSize: 36,
                 ),
-              ],
-            )
-          ],
-        ),
-        SizedBox(height: 5),
-        Row(children: <Widget>[
-          Container(
-            width: 33,
-            height: 33,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-              color: Colors.white,
-              boxShadow: [
-                new BoxShadow(
-                  color: Colors.black.withOpacity(0.25),
-                  blurRadius: 5.0,
+              ),
+              Container(
+                width: 60,
+                height: 60,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  color: Colors.white,
+                  boxShadow: [
+                    new BoxShadow(
+                      color: Colors.black.withOpacity(0.50),
+                      blurRadius: 5.0,
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  "1",
-                  style: TextStyle(
-                    fontFamily: "Helvetica",
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                )
-              ],
-            ),
-          ),
-          Text(
-            "  ECO - BRO - V5B (C107)",
-            style: TextStyle(
-              fontFamily: "Helvetica",
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
-          )
-        ]),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      "7.1",
+                      style: TextStyle(
+                        fontFamily: "Helvetica",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ]),
       ],
     ),
   );
